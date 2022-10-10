@@ -43,12 +43,22 @@ namespace WinRE_Settings_GUI
 
         private void enable_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("reagentc.exe", "/enable");
+            var p2 = new Process();
+            p2.StartInfo.FileName = "regentc";
+            p2.StartInfo.Arguments = "/enable";
+            p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+            p2.Start();
+            p2.WaitForExit();
         }
 
         private void disable_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("reagentc.exe", "/disable");
+            var p2 = new Process();
+            p2.StartInfo.FileName = "regentc";
+            p2.StartInfo.Arguments = "/disable";
+            p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+            p2.Start();
+            p2.WaitForExit();
         }
 
         private void repair_Click(object sender, EventArgs e)
@@ -62,9 +72,15 @@ namespace WinRE_Settings_GUI
             p.StartInfo.FileName = "regentc";
             p.StartInfo.Arguments = "/setreimage /path C:\\Windows\\System32\\Recovery";
             p.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+            p.Start();
             p.WaitForExit();
 
-            System.Diagnostics.Process.Start("reagentc.exe", "/enable");
+            var p2 = new Process();
+            p2.StartInfo.FileName = "regentc";
+            p2.StartInfo.Arguments = "/enable";
+            p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+            p2.Start();
+            p2.WaitForExit();
         }
     }
 }
