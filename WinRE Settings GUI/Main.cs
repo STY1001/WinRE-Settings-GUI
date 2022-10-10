@@ -64,6 +64,7 @@ namespace WinRE_Settings_GUI
             p2.Start();
             p2.WaitForExit();
             deb.Text = "1";
+            check();
         }
 
         private void disable_Click(object sender, EventArgs e)
@@ -75,6 +76,7 @@ namespace WinRE_Settings_GUI
             p2.Start();
             p2.WaitForExit();
             deb.Text = "0";
+            check();
         }
 
         private void repair_Click(object sender, EventArgs e)
@@ -98,6 +100,8 @@ namespace WinRE_Settings_GUI
             p2.Start();
             p2.WaitForExit();
             deb.Text="0";
+
+            check();
         }
         private void check()
         {
@@ -126,9 +130,9 @@ namespace WinRE_Settings_GUI
                 }
                 else
                 {
-                    dbtn(enable);
+                    ebtn(enable);
                     dbtn(repair);
-                    ebtn(disable);
+                    dbtn(disable);
                 }
             }
         }
