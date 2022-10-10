@@ -58,7 +58,7 @@ namespace WinRE_Settings_GUI
         private void enable_Click(object sender, EventArgs e)
         {
             var p2 = new Process();
-            p2.StartInfo.FileName = "regentc";
+            p2.StartInfo.FileName = "reagentc";
             p2.StartInfo.Arguments = "/enable";
             p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             p2.Start();
@@ -69,7 +69,7 @@ namespace WinRE_Settings_GUI
         private void disable_Click(object sender, EventArgs e)
         {
             var p2 = new Process();
-            p2.StartInfo.FileName = "regentc";
+            p2.StartInfo.FileName = "reagentc";
             p2.StartInfo.Arguments = "/disable";
             p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             p2.Start();
@@ -85,14 +85,14 @@ namespace WinRE_Settings_GUI
             }
 
             var p = new Process();
-            p.StartInfo.FileName = "regentc";
+            p.StartInfo.FileName = "reagentc";
             p.StartInfo.Arguments = "/setreimage /path C:\\Windows\\System32\\Recovery";
             p.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             p.Start();
             p.WaitForExit();
 
             var p2 = new Process();
-            p2.StartInfo.FileName = "regentc";
+            p2.StartInfo.FileName = "reagentc";
             p2.StartInfo.Arguments = "/enable";
             p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             p2.Start();
