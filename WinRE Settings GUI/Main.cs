@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,6 +40,19 @@ namespace WinRE_Settings_GUI
         public Main()
         {
             InitializeComponent();
+            check();
+        }
+
+        private void ebtn(Control btn)
+        {
+            btn.Enabled = true;
+            btn.ForeColor = Color.White;
+        }
+
+        private void dbtn(Control btn)
+        {
+            btn.Enabled = false;
+            btn.ForeColor = Color.Gray;
         }
 
         private void enable_Click(object sender, EventArgs e)
@@ -49,6 +63,7 @@ namespace WinRE_Settings_GUI
             p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             p2.Start();
             p2.WaitForExit();
+            deb.Text = "1";
         }
 
         private void disable_Click(object sender, EventArgs e)
@@ -59,6 +74,7 @@ namespace WinRE_Settings_GUI
             p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             p2.Start();
             p2.WaitForExit();
+            deb.Text = "0";
         }
 
         private void repair_Click(object sender, EventArgs e)
@@ -81,6 +97,40 @@ namespace WinRE_Settings_GUI
             p2.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
             p2.Start();
             p2.WaitForExit();
+            deb.Text="0";
+        }
+        private void check()
+        {
+            var p = new Process();
+            p.StartInfo.FileName = "reagentc";
+            p.StartInfo.Arguments = "/info";
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.Start();
+            p.WaitForExit();
+            string out1 = p.StandardOutput.ReadToEnd();
+            if (out1.Contains("Enable"))
+            {
+                dbtn(enable);
+                dbtn(repair);
+                ebtn(disable);
+            }
+            else
+            {
+                if (deb.Text == "1")
+                {
+                    dbtn(enable);
+                    ebtn(repair);
+                    dbtn(disable);
+                }
+                else
+                {
+                    dbtn(enable);
+                    dbtn(repair);
+                    ebtn(disable);
+                }
+            }
         }
     }
 }

@@ -31,6 +31,7 @@
             this.enable = new ReaLTaiizor.Controls.Button();
             this.disable = new ReaLTaiizor.Controls.Button();
             this.repair = new ReaLTaiizor.Controls.Button();
+            this.deb = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // enable
@@ -87,6 +88,16 @@
             this.repair.TextAlignment = System.Drawing.StringAlignment.Center;
             this.repair.Click += new System.EventHandler(this.repair_Click);
             // 
+            // deb
+            // 
+            this.deb.AutoSize = true;
+            this.deb.Location = new System.Drawing.Point(275, 13);
+            this.deb.Name = "deb";
+            this.deb.Size = new System.Drawing.Size(38, 13);
+            this.deb.TabIndex = 3;
+            this.deb.Text = "label1";
+            this.deb.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +105,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(380, 45);
             this.Controls.Add(this.repair);
+            this.Controls.Add(this.deb);
             this.Controls.Add(this.disable);
             this.Controls.Add(this.enable);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,6 +116,7 @@
             this.Name = "Main";
             this.Text = "WinRE Settings GUI";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,6 +125,7 @@
         private ReaLTaiizor.Controls.Button enable;
         private ReaLTaiizor.Controls.Button disable;
         private ReaLTaiizor.Controls.Button repair;
+        private System.Windows.Forms.Label deb;
     }
 }
 
