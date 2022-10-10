@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("WinRE Settings GUI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Lenovo")]
-[assembly: AssemblyProduct("WinRE Settings GUI")]
-[assembly: AssemblyCopyright("Copyright © Lenovo 2022")]
+[assembly: AssemblyCompany("STY1001")]
+[assembly: AssemblyProduct("")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
